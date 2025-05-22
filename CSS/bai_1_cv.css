@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../Picture/background.jpg);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+header h1 {
+    color: #2c3e50;
+}
+
+header p {
+    color: #34495e;
+}
+
+section h2 {
+    color: #007bff;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+section li {
+    margin-bottom: 15px;
+}
+
+progress {
+    width: 100%;
+    height: 10px;
+}
+
+.progress-bar {
+    display: inline-block;
+    width: 80%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 3px;
+    text-align: center;
+    border-radius: 5px;
+}

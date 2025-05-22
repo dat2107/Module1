@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+           
+        }
+
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #display {
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            margin-bottom: 10px;
+            padding: 5px;
+            text-align: right;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            font-size: 18px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .operator {
+            background-color: #ffc107;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .equals {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <table>
+                <tr>
+                    <td><button onclick="appendNumber('1')">1</button></td>
+                    <td><button onclick="appendNumber('2')">2</button></td>
+                    <td><button onclick="appendNumber('3')">3</button></td>
+                    <td><button class="operator" onclick="appendOperator('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('4')">4</button></td>
+                    <td><button onclick="appendNumber('5')">5</button></td>
+                    <td><button onclick="appendNumber('6')">6</button></td>
+                    <td><button class="operator" onclick="appendOperator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('7')">7</button></td>
+                    <td><button onclick="appendNumber('8')">8</button></td>
+                    <td><button onclick="appendNumber('9')">9</button></td>
+                    <td><button class="operator" onclick="appendOperator('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="clear" onclick="clearDisplay()">C</button></td>
+                    <td><button onclick="appendNumber('0')">0</button></td>
+                    <td><button class="equals" onclick="calculateResult()">=</button></td>
+                    <td><button class="operator" onclick="appendOperator('/')">/</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        function appendNumber(number) {
+            document.getElementById('display').value += number;
+        }
+
+        function appendOperator(operator) {
+            document.getElementById('display').value += ' ' + operator + ' ';
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            let display = document.getElementById('display');
+            display.value = eval(display.value.replace('x', '*'));
+        }
+
+    </script>
+</body>
+
+</html>

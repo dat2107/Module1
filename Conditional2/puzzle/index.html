@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle game</title>
+    <style>
+        .container {
+            width: 600px;
+            position: relative;
+        }
+
+        .slice {
+            width: 600px;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .slice img {
+            width: 600px;
+            height: 900px;
+            position: absolute;
+            left: 0;
+        }
+
+        .s0 img {
+            top: 0px;
+        }
+
+        .s1 img {
+            top: -180px;
+        }
+
+        .s2 img {
+            top: -360px;
+        }
+
+        .s3 img {
+            top: -540px;
+        }
+
+        .s4 img {
+            top: -720px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="slice s0" onclick="changeImage(0)"><img src="1.jpg" /></div>
+        <div class="slice s1" onclick="changeImage(1)"><img src="2.jpg" /></div>
+        <div class="slice s2" onclick="changeImage(2)"><img src="3.jpg" /></div>
+        <div class="slice s3" onclick="changeImage(3)"><img src="1.jpg" /></div>
+        <div class="slice s4" onclick="changeImage(4)"><img src="2.jpg" /></div>
+    </div>
+
+    <script>
+        const images = ["1.jpg", "2.jpg", "3.jpg"];
+        const indexes = [0, 0, 0, 0, 0]; 
+        const correctPositions = [0, 1, 2, 3, 4]; 
+
+        function changeImage(part) {
+            indexes[part] = (indexes[part] + 1) % images.length;
+            const slice = document.querySelectorAll('.slice')[part];
+            slice.querySelector('img').src = images[indexes[part]];
+
+            if (checkImageComplete()) {
+                document.getElementById('notification').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('notification').style.display = 'none';
+                }, 2000);
+            }
+        }
+
+        function checkImageComplete() {
+
+            for (let i = 0; i < indexes.length; i++) {
+                if (indexes[i] !== correctPositions[i]) {
+                   
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

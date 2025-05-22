@@ -1,0 +1,15 @@
+1. Ngôn ngữ lập trình là gì?
+Ngôn ngữ lập trình là một hệ thống các quy tắc dùng để viết phần mềm, ứng dụng hoặc giải quyết các vấn đề cụ thể. 
+Nó là phương tiện giao tiếp giữa con người và máy tính, giúp máy tính hiểu và thực hiện các công việc mà lập trình viên yêu cầu.
+2. JS là gì?
+JS (JavaScript) là một ngôn ngữ lập trình phổ biến dùng để xây dựng các ứng dụng web động. 
+Nó được sử dụng chủ yếu trong trình duyệt web để tạo ra các hiệu ứng, xử lý sự kiện người dùng, và giao tiếp với các máy chủ. 
+JavaScript là một phần không thể thiếu trong việc phát triển web hiện đại, cùng với HTML và CSS.
+3. Cách sử dụng JS (trong html)?
+Để sử dụng JavaScript trong HTML, bạn có thể chèn mã JS vào trong thẻ <script> trong phần <head> hoặc <body> của trang HTML. 
+Đây là cách cơ bản để nhúng JavaScript vào trang web:
+4. một vài cú pháp cơ bản của JS(nhập, xuất dữ liệu)?
+var name = prompt("Nhập tên của bạn:");
+alert("Chào " + name + "!");
+alert("Xin chào, đây là thông báo!");
+console.log("Dữ liệu đã được ghi vào console");

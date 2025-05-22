@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Chọn 1 bài</h2>
+    <button onclick="bai1()">bai 1</button>
+    <button onclick="bai2()">bai 2</button>
+    <button onclick="bai3()">bai 3</button>
+    <br>
+    <button onclick="bai4()">bai 4</button>
+    <button onclick="bai5()">bai 5</button>
+    <button onclick="bai6()">bai 6</button>
+    <br>
+    <button onclick="bai7()">bai 7</button>
+    <script>
+        function bai1() {
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            if (a % b == 0) {
+                alert("a chia hết cho b");
+            } else {
+                alert("Không chia hết")
+            }
+        }
+        function bai2() {
+            let old = +prompt("Nhập tuổi: ");
+            if (old > 15) {
+                document.write(old + " đủ điều kiện");
+            } else {
+                document.write(old + " ko đủ điều kiện");
+            }
+        }
+        function bai3() {
+            let random = +prompt("Nhập số bất kì");
+            if (random > 0) {
+                alert(random + " > 0");
+            } else if(random > 0){
+                alert(random + " < 0");
+            } else {
+                alert(random + " = 0");
+            }
+        }
+        function bai4() {
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            let c = +prompt("Nhập c: ");
+            let max = Math.max(a, b, c);
+            alert("Số lớn nhất là: " + max);
+
+        }
+        function bai5() {
+            let kt = +prompt("Nhập điểm kiểm tra:");
+            let gk = +prompt("Nhập điểm giữa kỳ:");
+            let ck = +prompt("Nhập điểm cuối kỳ:");
+            let tb = (kt * 0.1 + gk * 0.3 + ck * 0.6);
+            let xepLoai = "";
+            if (tb >= 8.5) {
+                xepLoai = "Giỏi";
+            } else if (tb >= 7) {
+                xepLoai = "Khá";
+            } else if (tb >= 5.5) {
+                xepLoai = "Trung bình";
+            } else if (tb >= 4) {
+                xepLoai = "Yếu";
+            } else {
+                xepLoai = "Kém";
+            }
+            alert("Điểm trung bình: " + tb.toFixed(2) + "\nXếp loại: " + xepLoai);
+        }
+        function bai6() {
+            let ds = parseInt(prompt("Nhập doanh số bán hàng: "));
+            let rm;
+            if (ds > 100) {
+                rm = ds * 10 / 100;
+                alert("Hoa hồng là: " + rm);
+            } else if (ds > 50) {
+                rm = ds * 7 / 100;
+                alert("Hoa hồng là: " + rm);
+            } else if (ds > 20) {
+                rm = ds * 5 / 100;
+                alert("Hoa hồng là: " + rm);
+            } else {
+                rm = ds * 2 / 100;
+                alert("Hoa hồng là: " + rm);
+            }
+        }
+        function bai7() {
+            let soPhut = parseInt(prompt("Nhập số phút gọi điện thoại: "));
+            let cuoc;
+            if (soPhut > 100) {
+                cuoc = soPhut * 500;
+                alert("Cước điện thoại là: " + cuoc + " đồng (giá 500đ/phút)");
+            } else if (soPhut > 50) {
+                cuoc = soPhut * 800;
+                alert("Cước điện thoại là: " + cuoc + " đồng (giá 800đ/phút)");
+            } else {
+                cuoc = soPhut * 1000;
+                alert("Cước điện thoại là: " + cuoc + " đồng (giá 1000đ/phút)");
+            }
+        }
+    </script>
+</body>
+
+</html>

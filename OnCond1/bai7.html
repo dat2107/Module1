@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<script>
+    let soPhut = parseInt(prompt("Nhập số phút gọi điện thoại: "));
+    let cuoc;
+
+    if (soPhut > 100) {
+        cuoc = soPhut * 500;
+        alert("Cước điện thoại là: " + cuoc + " đồng (giá 500đ/phút)");
+    } else if (soPhut > 50) {
+        cuoc = soPhut * 800;
+        alert("Cước điện thoại là: " + cuoc + " đồng (giá 800đ/phút)");
+    } else {
+        cuoc = soPhut * 1000;
+        alert("Cước điện thoại là: " + cuoc + " đồng (giá 1000đ/phút)");
+    }
+</script>
+</body>
+</html>

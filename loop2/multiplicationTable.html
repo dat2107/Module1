@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 6px 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Bảng cửu chương</h1>
+        <div id="table">
+        </div>
+    </center>
+    <script>
+        const container = document.getElementById("table");
+        const table = document.createElement("table");
+        for (let j = 1; j <= 9; j++) {
+            const row = document.createElement("tr");
+            for (let i = 2; i <= 9; i++) {
+                const cell = document.createElement("td");
+                cell.textContent = `${i}x${j}=${i * j}`
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+            container.appendChild(table);
+        }
+
+    </script>
+</body>
+
+</html>

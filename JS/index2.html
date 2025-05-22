@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="data"></h1>
+    <input type="text" id="data2" placeholder="Tên của bạn">
+    <button onclick="nhap()">nhập</button>
+    <h1 id="hienthi"></h1>
+    <!-- <script>
+        let name = "linh";
+        let a = 1+2;
+        alert(a);
+        console.log(name); //hiển thị trên console
+        document.write(name);
+        document.getElementById("data").innerHTML = name;
+    </script> -->
+    <script>
+        //let name = prompt("Nhập tên bạn đi: ");
+        //document.write(name);
+        function nhap(){
+            let name = document.getElementById("data2").value;
+            document.getElementById("hienthi").innerHTML = name;
+        }
+    </script>
+</body>
+</html>

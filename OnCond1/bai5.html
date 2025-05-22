@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let kt = +prompt("Nhập điểm kiểm tra:");
+        let gk = +prompt("Nhập điểm giữa kỳ:");
+        let ck = +prompt("Nhập điểm cuối kỳ:");
+
+        let tb = (kt + gk + ck) / 3;
+
+        let xepLoai = "";
+
+        if (tb >= 8.5) {
+            xepLoai = "Giỏi";
+        } else if (tb >= 7) {
+            xepLoai = "Khá";
+        } else if (tb >= 5.5) {
+            xepLoai = "Trung bình";
+        } else if (tb >= 4) {
+            xepLoai = "Yếu";
+        } else {
+            xepLoai = "Kém";
+        }
+
+        alert("Điểm trung bình: " + tb.toFixed(2) + "\nXếp loại: " + xepLoai);
+
+    </script>
+</body>
+
+</html>

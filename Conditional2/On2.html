@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Chọn 1 bài</h2>
+    <button onclick="bai1()">bai 1</button>
+    <button onclick="bai2()">bai 2</button>
+    <button onclick="bai3()">bai 3</button>
+    <br>
+    <button onclick="bai4()">bai 4</button>
+    <button onclick="bai5()">bai 5</button>
+    <button onclick="bai6()">bai 6</button>
+    <br>
+    <button onclick="bai7()">bai 7</button>
+    <button onclick="bai8()">bai 8</button>
+    <button onclick="bai9()">bai 9</button>
+    <br>
+    <button onclick="bai10()">bai 10</button>
+    <button onclick="bai11()">bai 11</button>
+    <button onclick="bai12()">bai 12</button>
+    <script>
+        function bai1() {
+            let C = +prompt("Nhập vào độ C: ");
+            let F = (C * 9 / 5) + 32;
+            alert("Chuyển sang độ F là: " + F);
+        }
+        //Chuyển từ mét sang feet:ft =m * 3.2808
+        function bai2() {
+            let m = +prompt("Nhập mét: ");
+            let ft = m * 3.2808;
+            alert("ft = " + ft);
+        }
+        //Tính diện tích hình vuông khi biết cạnh a.
+        function bai3() {
+            let a = +prompt("Nhập a:");
+            alert("Diện tích hv = " + a * a);
+        }
+        //Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+        function bai4() {
+            let a = +prompt("Nhập a:");
+            let b = +prompt("Nhập b:");
+            alert("Diện tích hcn = " + a * b);
+        }
+        //Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+        function bai5() {
+            let a = +prompt("Nhập a:");
+            let b = +prompt("Nhập b:");
+            alert("Diện tích tg = " + (a * b) / 2);
+        }
+        //Giải phương trình bậc 1: ax+b=0
+        function bai6() {
+            let a = +prompt("Nhập a:");
+            let b = +prompt("Nhập b:");
+            alert("x = " + (-b / a));
+        }
+        //Giải phương trình bậc 2: ax2+bx+c=0
+        function bai7() {
+            let a = +prompt("Nhập a:");
+            let b = +prompt("Nhập b:");
+            let c = +prompt("Nhập c:");
+            let delta, x, x1, x2;
+            if (a == 0) {
+                if (b == 0) {
+                    if (c == 0) {
+                        alert("Phương trình vô số nghiệm");
+                    } else {
+                        alert("Phương trình vô nghiệm");
+                    }
+                } else {
+                    alert("phương trình có nhiệm: x = " + (-c / b));
+                }
+            } else {
+                delta = b * b - 4 * a * c;
+                if (delta < 0) {
+                    alert("Phương trình vô nghiệm");
+                } else if (delta == 0) {
+                    x = -b / (2 * a);
+                    alert("phương trình có nhiệm kép: x = " + x);
+                } else {
+                    x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    alert("phương trình có hai nhiệm phân biệt: x1 = " + x1 + " x2 = " + x2);
+                }
+            }
+        }
+        //Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+        function bai8() {
+            let old = +prompt("Nhập tuổi: ");
+            if (old > 0 && old <120 ) {
+                document.write(old + " là tuổi con người");
+            } else {
+                document.write(old + " không là tuổi con người");
+            }
+        }
+        //Kiểm tra tam giác
+        function bai9(){
+            let a = +prompt("Nhập a:");
+            let b = +prompt("Nhập b:");
+            let c = +prompt("Nhập c:");
+            if(a>0 && b>0 && c>0 && a + b > c && b + c > a && a + c > b){
+                alert("a,b,c là một cạnh của tam giác")
+            } else alert("Không phải tam giác")
+        }
+        //Viết chương trình tính giá điện.
+        function bai10(){
+            let soKw = +prompt("Nhập số kw tiêu thụ: ");
+            let cuoc;
+            if(soKw <= 50){
+                cuoc = soKw * 1678;
+            } else if(soKw <= 100){
+                cuoc = 50 * 1678 + (soKw - 50) * 1734;
+            } else {
+                cuoc = 50 * 1678 + 50 * 1734 + (soKw - 100) * 2014;
+            }
+            alert("Tiền điện phải trả là: " + cuoc);
+        }
+        //Viết chương trình tính thuế thu nhập cá nhân.
+        function bai11(){
+            let thuNhap = +prompt("Nhập thu nhập: ");
+            let thue;
+            if(thuNhap <= 5000000){
+                thue = 0;
+            } else if(thuNhap <= 10000000){
+                thue = (thuNhap - 5000000) * 0.1;
+            } else if(thuNhap <= 18000000){
+                thue = (thuNhap - 10000000) * 0.2 + 500000;
+            } else {
+                thue = (thuNhap - 18000000) * 0.3 + 2500000;
+            }
+            alert("Thuế thu nhập cá nhân là: " + thue);
+        }
+        //Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        function bai12(){
+            let soTien = +prompt("Nhập số tiền: ");
+            let thang = +prompt("Nhập số tháng: ");
+            let laiSuat = +prompt("Nhập lãi suất hàng tháng: ");
+            let tongLai = soTien * laiSuat * thang / 100;
+            alert("Tiền lãi là: " + tongLai);
+        }
+    </script>
+</body>
+
+</html>

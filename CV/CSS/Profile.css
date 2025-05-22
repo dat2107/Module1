@@ -1,0 +1,109 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar .h1 {
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.nav-link:hover{
+    color: blue !important;
+    text-decoration: underline;
+}
+
+.carousel-item{
+    height: 500px;
+    position: relative;
+}
+
+.carousel-item .overlay-image {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;        
+    height: auto;
+    border-radius: 50%;   
+}
+
+.carousel-item .overlay-name {
+    position: absolute;
+    top: 47%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-item .overlay-name2 {
+    position: absolute;
+    top: 55%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-size: medium;
+}
+
+.carousel-item .social-nav {
+    position: absolute;
+    top: 60%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.carousel-item .social-nav .nav-link{
+    color: white !important;
+}
+
+.carousel-item .social-nav .nav-link:hover{
+    color: black !important;
+}
+
+.carousel-item .btn-group {
+    position: absolute;
+    top: 75%; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.row {
+    position: relative;   
+    width: 100%; /* Đảm bảo chiều rộng chiếm toàn bộ không gian của phần tử cha */
+    max-width: 1505px; /* Giới hạn chiều rộng tối đa */
+    top: 100px;
+    left: 25px;
+    margin: 0 auto; /* Căn giữa */
+    padding: 30px;  
+    border: 2px solid #ccc;
+    box-shadow: rgba(252, 251, 251, 0.7);
+}
+
+.row p{
+    text-align: justify;
+}
+
+td:nth-child(2) {
+    padding-left: 70px;
+}
+
+.skill-label {
+    display: inline-block;
+    width: 100px; /* hoặc 120px tùy độ dài label lớn nhất */
+    margin-right: 15px;
+    font-weight: 500;
+}

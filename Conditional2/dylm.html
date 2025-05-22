@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center style="margin-top: 400px;">
+        <h1>Do You Love Me</h1>
+        <button onclick="alert('>3')" id="btnYes">Yes</button>
+        <button id="btnNo" style="position: absolute;" onmousemove="hover()">No</button>
+    </center>
+
+    <!-- <script>
+        const btnNo = document.getElementById("btnNo");
+        btnNo.addEventListener("mouseenter", () => {
+            const X = window.innerWidth - btnNo.offsetWidth;
+            const Y = window.innerHeight - btnNo.offsetHeight;
+            const rX = Math.floor(Math.random()*X);
+            const rY = Math.floor(Math.random()*Y);
+            btnNo.style.left = `${rX}px`;
+            btnNo.style.top = `${rY}px`;
+        })
+    </script> -->
+    <script>
+        function hover() {
+            let ArrayUP = Math.floor(Math.random() * window.innerWidth);
+            let ArrayDown = Math.floor(Math.random() * window.innerHeight);
+            let btnNo = document.getElementById("btnNo");
+            btnNo.style.left = `${ArrayUP}px`;
+            btnNo.style.top = `${ArrayDown}px`;
+        }
+    </script>
+</body>
+
+</html>

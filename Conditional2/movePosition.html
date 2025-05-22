@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png"
+        style="position:absolute;left:0; top:0;" height="200" width="160" />
+    <script>
+        function up() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+        function down() {
+            let element = document.getElementById("nobita");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+        function left() {
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+        function right() {
+            let element = document.getElementById("nobita");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+        function move(event) {
+            switch (event.key) {
+                case "ArrowUp":
+                    up();
+                    break;
+                case "ArrowDown":
+                    down();
+                    break;
+                case "ArrowLeft":
+                    left();
+                    break;
+                case "ArrowRight":
+                    right();
+                    break;
+            }
+        }
+        document.addEventListener("keydown",move);
+    </script>
+</body>
+
+</html>

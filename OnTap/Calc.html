@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .calculator {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #display {
+            width: 91%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .operator {
+            background-color: #e0e0e0;
+        }
+
+        .equals {
+            background-color: #4d90fe;
+            color: white;
+        }
+
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled value="0">
+        <div class="buttons">
+            <table>
+                <tr>
+                    <td><button class="operator" onclick="appendOperator('(')">(</button></td>
+                    <td><button class="operator" onclick="appendOperator(')')">)</button></td>
+                    <td><button class="operator" onclick="appendOperator('%')">%</button></td>
+                    <td><button class="clear" onclick="clearDisplay()">AC</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('7')">7</button></td>
+                    <td><button onclick="appendNumber('8')">8</button></td>
+                    <td><button onclick="appendNumber('9')">9</button></td>
+                    <td><button class="operator" onclick="appendOperator('/')">÷</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('4')">4</button></td>
+                    <td><button onclick="appendNumber('5')">5</button></td>
+                    <td><button onclick="appendNumber('6')">6</button></td>
+                    <td><button class="operator" onclick="appendOperator('*')">×</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('1')">1</button></td>
+                    <td><button onclick="appendNumber('2')">2</button></td>
+                    <td><button onclick="appendNumber('3')">3</button></td>
+                    <td><button class="operator" onclick="appendOperator('-')">−</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="appendNumber('0')">0</button></td>
+                    <td><button onclick="appendOperator('.')">.</button></td>
+                    <td><button class="equals" onclick="calculateResult()">=</button></td>
+                    <td><button class="operator" onclick="appendOperator('+')">+</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function appendNumber(number) {
+            const display = document.getElementById('display');
+            if (display.value === "0") {
+                display.value = number;
+            } else {
+                display.value += number;
+            }
+        }
+
+        function appendOperator(operator) {
+            const display = document.getElementById('display');
+            const lastChar = display.value.slice(-1);
+            if ("+-*/.%".includes(lastChar)) {
+                display.value = display.value.slice(0, -1) + operator;
+            } else {
+                display.value += operator;
+            }
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = "0";
+        }
+
+        function calculateResult() {
+            try {
+                const display = document.getElementById('display');
+                display.value = eval(display.value.replace('×', '*').replace('÷', '/'));
+            } catch {
+                alert("Invalid expression");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

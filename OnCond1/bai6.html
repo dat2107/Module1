@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ds = parseInt(prompt("Nhập doanh số bán hàng: "));
+        let rm;
+        if(ds>100){
+            rm = ds*10/100;
+            alert("Hoa hồng là: "+rm);
+        } else if(ds>50){
+            rm = ds*7/100;
+            alert("Hoa hồng là: "+rm);
+        } else if(ds>20){
+            rm = ds*5/100;
+            alert("Hoa hồng là: "+rm);
+        } else{
+            rm = ds*2/100;
+            alert("Hoa hồng là: "+rm);
+        }
+    </script>
+</body>
+</html>
