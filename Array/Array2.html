@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr2 = [
+            // 0   1   2
+            [3, 4, 5],  // 0
+            [9, -4, 10], // 1
+            [7, 0, 6]   // 2
+        ];
+
+        // console.log(arr2[0][2]); // [3, 4, 5]
+        // console.log(arr2[2][0]); // [7, 0, 6] => lấy phần tử vị trí 0 => 7
+
+        for (let i = 0; i < arr2.length; i++) { // i = 1
+            // arr[0] => [3, 4, 5];
+            for (let j = 0; j < arr2[i].length; j++) { // j = 3
+                console.log(arr2[1][j]); // arr[0][2] => 3 4 5
+            }
+        }
+// Cho mảng :  let arr = [
+//         [1, 3, 4],
+//         [3, 4, 5],
+//         [5, 5, 6]
+//     ];
+// Bài 1: Tính tổng các phần tử mảng 2 chiều.
+// Bài 2: In ra tổng các phần tử của từng hàng.
+// Bài 3: Tìm phần tử lớn nhất trong các hàng.
+// Bài 4: Tìm phần tử nhất theo đường chéo chính
+    </script>
+</body>
+
+</html>

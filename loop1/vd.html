@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, Initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- In ra 100 chữ 'Hello'
+    Nhập vào N từ prompt. In ra N lần chữ 'Hello'
+    In ra cac số từ 1 đến 1000;
+    In ra cac số từ a đến b;
+    In ra cac số từ a đến b, mỗi số trong 1 thẻ <h1>;
+    In ra các số chẵn tu a đến b;
+    In ra các số từ a đến b số chẵn trong h2, so le trong h1;
+    Tính tích.
+    Tính Tổng các số chia 5 dư 2 từ a đến b.
+    Đếm các số chia 5 dư 2 từ a đến b
+    In ra màn hình 0, 5 ,10,15, 20, ... 50.
+    In ra  màn hình 10, 9, 8, 7, 6, ... 0.
+    In ra màn hình 50, 45, 40, .. 0 
+    In ra bảng cửu chương 5. -->
+    <h2>Chọn 1 bài</h2>
+    <button onclick="bai1()">bai 1</button>
+    <button onclick="bai2()">bai 2</button>
+    <button onclick="bai3()">bai 3</button>
+    <br>
+    <button onclick="bai4()">bai 4</button>
+    <button onclick="bai5()">bai 5</button>
+    <button onclick="bai6()">bai 6</button>
+    <br>
+    <button onclick="bai7()">bai 7</button>
+    <button onclick="bai8()">bai 8</button>
+    <button onclick="bai9()">bai 9</button>
+    <br>
+    <button onclick="bai10()">bai 10</button>
+    <button onclick="bai11()">bai 11</button>
+    <button onclick="bai12()">bai 12</button>
+    <br>
+    <button onclick="bai13()">bai 13</button>
+    <button onclick="bai14()">bai 14</button>
+    <script>
+        // In ra 100 chữ 'Hello'
+        function bai1(){
+            for(let i = 1; i<=100; i++){
+                document.write(i+": Hello<br>");
+            }
+        }
+        //Nhập vào N từ prompt. In ra N lần chữ 'Hello'
+        function bai2(){
+            let N = +prompt("Nhập N");
+            for(let i = 1; i<=N; i++){
+                document.write(i+": Hello<br>");
+            }
+        }
+        //In ra cac số từ 1 đến 1000;
+        function bai3(){
+            for(let i = 1; i<=1000; i++){
+                document.write(i+"<br>");
+            }
+        }
+        //In ra cac số từ a đến b;
+        function bai4(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            for(a;a<=b;a++){
+                document.write(a);
+            }
+        }
+        //In ra cac số từ a đến b, mỗi số trong 1 thẻ <h1>;
+        function bai5(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            for(a;a<=b;a++){
+                const h1 = document.createElement("h1");
+                h1.textContent = `${a}`;
+                document.body.appendChild(h1);
+            }
+        }
+        //In ra các số chẵn tu a đến b;
+        function bai6(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            for(a;a<=b;a++){
+                if(a%2==0){
+                    document.write(a);
+                }
+            }
+        }
+        //In ra các số từ a đến b số chẵn trong h2, so le trong h1;
+        function bai7(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            for(a;a<=b;a++){
+                if(a%2==0){
+                    const h1 = document.createElement("h1");
+                    h1.textContent = `${a}`;
+                    document.body.appendChild(h1);
+                } else {
+                    const h2 = document.createElement("h2");
+                    h2.textContent = `${a}`;
+                    document.body.appendChild(h2);
+                }
+            }
+        }
+        //Tính tích.
+        function bai8(){
+            
+        }
+        //Tính Tổng các số chia 5 dư 2 từ a đến b.
+        function bai9(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            let count = 0;
+            for(let i=a;i<=b;i++){
+                if(i%5==2){
+                    count += i;
+                }
+            }
+            document.write("Tổng các số chia 5 dư 2 từ " + a + " đến " + b + " là: " + count);
+        }
+        //Đếm các số chia 5 dư 2 từ a đến b
+        function bai10(){
+            let a = +prompt("Nhập a: ");
+            let b = +prompt("Nhập b: ");
+            let count = 0;
+            for(let i=a;i<=b;i++){
+                if(i%5==2){
+                    count++;
+                }
+            }
+            document.write(count);
+        }
+        //In ra màn hình 0, 5 ,10,15, 20, ... 50.
+        function bai11(){
+            for(i=0;i<=50;i+=5){
+                document.write(i);
+            }
+        }
+        // In ra  màn hình 10, 9, 8, 7, 6, ... 0.
+        function bai12(){
+            for(i=10;i>=0;i--){
+                document.write(i);
+            }
+        }
+        //In ra màn hình 50, 45, 40, .. 0 
+        function bai13(){
+            for(i=50;i>=0;i-=5){
+                document.write(i);
+            }
+        }
+        //In ra bảng cửu chương 5.
+        function bai14(){
+            let a = 5;
+            for(i=1;i<10;i++){
+                document.write(`${a} x ${i} = `+a*i+"<br>");
+            }
+        }
+    </script>
+</body>
+</html>

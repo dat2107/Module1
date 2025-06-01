@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h2>Chọn 1 bài đi!!!!</h2>
+        <button onclick="bai1()">bai 1</button>
+        <button onclick="bai2()">bai 2</button>
+        <button onclick="bai3()">bai 3</button>
+        <br>
+        <button onclick="bai4()">bai 4</button>
+        <button onclick="bai5()">bai 5</button>
+        <button onclick="bai6()">bai 6</button>
+        <br>
+        <button onclick="bai7()">bai 7</button>
+        <button onclick="bai8()">bai 8</button>
+    </center>
+    <script>
+        //Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+        function bai1() {
+            for (let i = 1; i < 100; i++) {
+                console.log(i);
+                if (i === 99) {
+                    alert("Hoàn thành");
+                }
+            }
+        }
+        //Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. 
+        //Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. 
+        //Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+        function bai2() {
+            let tem;
+            do {
+                tem = +prompt("Nhập nhiệt độ hiện tại: ");
+                if (tem > 100) {
+                    alert("Nhiệt độ quá cao, vui lòng nhập lại");
+                }
+                else if (tem < 20) {
+                    alert("Nhiệt độ quá thấp, vui lòng nhập lại");
+                }
+            } while (tem > 100 || tem < 20);
+            alert("Nhiệt độ hợp lệ: " + tem);
+        }
+        //Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+        function bai3() {
+            let a = 0; b = 1;
+            for (let i = 0; i < 20; i++) {
+                document.write(a + "<br>");
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+        }
+        //Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+        function bai4() {
+            let a = 0; b = 1;
+            while (true) {
+                if (a % 5 === 0 && a !== 0) { // Loại bỏ số 0 nếu không tính
+                    document.write("Số Fibonacci đầu tiên chia hết cho 5 là: " + a);
+                    break;
+                }
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+        }
+        //Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+        function bai5() {
+            let sum = 0;
+            let a = 0; b = 1;
+            for (let i = 0; i < 20; i++) {
+                sum += a;
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+            document.write("Tổng 20 số đầu = " + sum);
+        }
+        //Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+        function bai6() {
+            let sum = 0;
+            for (let i = 1; i <= 30; i++) {
+                sum += i * 7;
+            }
+            document.write("Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên = " + sum);
+        }
+        //Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. 
+        //Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó.
+        // Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+        function bai7() {
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    document.write("FizzBuzz" + "<br>");
+                } else if (i % 5 == 0) {
+                    document.write("Buzz" + "<br>");
+                } else if (i % 3 == 0) {
+                    document.write("Fizz" + "<br>");
+                } else {
+                    document.write(i + "<br>");
+                }
+            }
+        }
+        //Game đoán số
+        function bai8() {
+            const btn = document.createElement("button");
+            btn.textContent = "Chơi";
+            document.body.appendChild(btn);
+            btn.addEventListener("click", function () {
+                let max = +prompt("Nhập khoảng mà bạn muốn đoán: ");
+                let random = Math.floor(Math.random() * (max));
+                let guess;
+                do {
+                    guess = +prompt("nhập số bạn muốn đoán")
+                    if (guess> random) {
+                        alert("Bạn cần nhập số nhỏ hơn");
+                    } else if (guess < random) {
+                        alert("Bạn cần nhập số lớn hơn");
+                    } else {
+                        alert("Chúc mừng bạn đã chọn đúng");
+                    }
+                }while(guess !== random);
+            });
+        }
+    </script>
+</body>
+
+</html>

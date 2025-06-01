@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- * Bài tập sau giờ
+Cho một mảng [1,7,5,9,2,6]
+- In ra các phần tử trong mảng
+- In ra các phần tử chẵn trong mảng
+- In ra các phần tử tại vị trí chẵn trong mảng
+- In ra tổng các phần tử chẵn trong mảng
+- In ra tổng các phần tử >10 trong mảng
+- In ra tổng các phần tử chia 7 dư 2 trong mảng
+- In ra max của các phần tử chẵn mảng
+- In ra lớn nhất của mảng
+- In ra số lượng các phần tử chia hết cho 5 trong mảng
+- In ra trung bình các phần tử chia hết cho 5 trong mảng
+- * Tìm phần tử lớn thứ 2 trong mảng -->
+    <center>
+        <h2>Chọn 1 bài đi!!!!</h2>
+        <button onclick="bai1()">bai 1</button>
+        <button onclick="bai2()">bai 2</button>
+        <button onclick="bai3()">bai 3</button>
+        <br>
+        <button onclick="bai4()">bai 4</button>
+        <button onclick="bai5()">bai 5</button>
+        <button onclick="bai6()">bai 6</button>
+        <br>
+        <button onclick="bai7()">bai 7</button>
+        <button onclick="bai8()">bai 8</button>
+        <button onclick="bai9()">bai 9</button>
+        <br>
+        <button onclick="bai10()">bai 10</button>
+        <button onclick="bai11()">bai 11</button>
+        <button onclick="test()">test</button>
+        <br>
+        <button onclick="test2()">test2</button>
+    </center>
+    <script>
+        //- In ra các phần tử trong mảng
+        function bai1() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            console.log(arr);
+        }
+        //- In ra các phần tử chẵn trong mảng
+        function bai2() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let newarr = "";
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    newarr += arr[i] + ", ";
+                }
+            }
+            console.log("Các phần tử chẵn trong mảng: " + newarr);
+        }
+        //- In ra các phần tử tại vị trí chẵn trong mảng
+        function bai3() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let newarr = "";
+            for (let i = 0; i < arr.length; i++) {
+                if (i % 2 == 0) {
+                    newarr += arr[i] + ", ";
+                }
+            }
+            console.log("Các phần tử tại vị trí chẵn trong mảng: " + newarr);
+        }
+        //- In ra tổng các phần tử chẵn trong mảng
+        function bai4() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    total += arr[i];
+                }
+            }
+            console.log("Tổng các phần tử chẵn trong mảng: " + total);
+        }
+        //- In ra tổng các phần tử >10 trong mảng
+        function bai5() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > 5) {
+                    total += arr[i];
+                }
+            }
+            console.log("Tổng các phần tử >5 trong mảng: " + total);
+        }
+        //- In ra tổng các phần tử chia 7 dư 2 trong mảng
+        function bai6() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 7 == 2) {
+                    total += arr[i];
+                }
+            }
+            console.log("Tổng các phần tử chia 7 dư 2 trong mảng: " + total);
+        }
+        //- In ra max của các phần tử chẵn mảng
+        function bai7() {
+            let arr = [1, 7, 5, 9, -2, -6];
+            let maxEven = -Infinity;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    maxEven = Math.max(maxEven, arr[i]);
+                }
+            }
+            console.log("Max của các phần tử chẵn trong mảng: " + maxEven);
+        }
+        //test
+        function test() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let maxEven = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    maxEven.push(arr[i]);
+                }
+            }
+            let max = maxEven[0];
+            for (let i = 1; i < maxEven.length; i++) {
+                if (maxEven[i] > max) {
+                    max = maxEven[i];
+                }
+            }
+            console.log("Max của các phần tử chẵn trong mảng: " + max);
+        }
+        //- In ra lớn nhất của mảng
+        function bai8() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let max = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            console.log("Số lớn nhất của mảng: " + max);
+        }
+        //- In ra số lượng các phần tử chia hết cho 5 trong mảng
+        function bai9() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 5 == 0) {
+                    count++;
+                }
+            }
+            console.log("Các phần tử chia hết cho 5: " + count);
+        }
+        //- In ra trung bình các phần tử chia hết cho 5 trong mảng
+        function bai10() {
+            let arr = [1, 7, 5, 9, 2, 6, 0];
+            let total = 0;
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 5 === 0 && arr[i] !== 0) {
+                    total += arr[i];
+                    count++;
+                }
+            }
+            let avg = total / count;
+            console.log("Trung bình các phần tử chia hết cho 5: " + avg);
+        }
+        //- * Tìm phần tử lớn thứ 2 trong mảng
+        function bai11() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            arr.sort((a, b) => b - a);
+            console.log("Mảng đã sắp xếp theo thứ tự giảm dần: " + arr);
+            let secondMax = arr[1];
+            console.log("Số lớn thứ 2 của mảng: " + secondMax);
+        }
+        //test2
+        function test2() {
+            let arr = [1, 7, 5, 9, 2, 6];
+            let tg;
+            for (let i = 0; i < arr.length; i++){
+                for(let j = i+1; j< arr.length; j++){
+                    if(arr[i]<arr[j]){
+                        tg = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = tg;
+                    }
+                }
+            }
+            //arr.sort((a, b) => b - a);
+            //console.log("Mảng đã sắp xếp theo thứ tự giảm dần: " + arr);
+            let secondMax = arr[1];
+            console.log("Số lớn thứ 2 của mảng: " + secondMax);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h2>Chọn 1 bài đi!!!!</h2>
+        <button onclick="bai1()">bai 1</button>
+        <button onclick="bai2()">bai 2</button>
+        <button onclick="bai3()">bai 3</button>
+        <br>
+        <button onclick="bai4()">bai 4</button>
+        <button onclick="bai5()">bai 5</button>
+        <button onclick="bai6()">bai 6</button>
+    </center>
+    <script>
+        //Bài 1: In dãy Fibonaci
+        function bai1() {
+            let n = +prompt("Nhập số lượng muốn hiển thị: ")
+            let a = 0; b = 1;
+            for (let i = 0; i < n; i++) {
+                document.write(a + "<br>");
+                let next = a + b;
+                a = b;
+                b = next;
+            }
+        }
+        //Bài 2: Tính giai thừa của một số nguyên dương
+        function bai2() {
+            let n = +prompt("Nhập n:");
+            let gt = 1;
+            for (let i = 1; i <= n; i++) {
+                gt *= i;
+            }
+            document.write(n + "! = " + gt);
+        }
+        //Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+        function bai3() {
+            for (let i = 1; i <= 5; i++) {
+                let line = "";
+                for (let j = 1; j <= i; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+            console.log("");
+            for (let i = 5; i > 0; i--) {
+                let line = "";
+                for (let j = 0; j < i; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+            console.log("");
+            for (let i = 1; i <= 5; i++) {
+                let line = "";
+                for (let j = 5; j > i; j--) {
+                    line += " ";
+                }
+                for (let j = 1; j <= i; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+            console.log("");
+            for (let i = 1; i <= 5; i++) {
+                let line = "";
+                for (let j = 1; j < i; j++) {
+                    line += " ";
+                }
+                for (let j = i; j <= 5; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+
+        }
+        //Bài 4: In hình chữ nhật
+        function bai4() {
+            let line = "";
+            for (let i = 1; i <= 16; i++) {
+                line += "*";
+            }
+            console.log(line);
+            for (let i = 1; i <= 2; i++) {
+                let line = "";
+                for (let j = 1; j <= 16; j++) {
+                    if (j == 1 || j == 16) {
+                        line += "*";
+                    } else {
+                        line += " ";
+                    }
+                }
+                console.log(line);
+                console.log(line);
+            }
+            console.log(line);
+
+        }
+
+        //Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+        function bai5() {
+            // Lấy thông tin từ người dùng
+            let soTien = +prompt("Nhập số tiền ban đầu: ");
+            let thang = +prompt("Nhập số tháng cho vay: ");
+            let laiSuat = +prompt("Nhập lãi suất hàng tháng (ví dụ 0.02 cho 2%): ");
+
+            // Khởi tạo biến tổng số tiền (số tiền ban đầu)
+            let tongTien = soTien;
+
+            // Hiển thị thông tin ban đầu
+            document.write("<h3>Thông tin tính lãi ngân hàng:</h3>");
+            document.write(`<p>Số tiền ban đầu: ${soTien.toFixed(2)} VNĐ</p>`);
+            document.write(`<p>Số tháng cho vay: ${thang} tháng</p>`);
+            document.write(`<p>Lãi suất hàng tháng: ${(laiSuat * 100).toFixed(2)}%</p>`);
+            document.write("<h4>Kết quả tính lãi qua từng tháng:</h4>");
+
+            // Tính toán lãi theo công thức lãi kép và in kết quả từng tháng
+            for (let i = 1; i <= thang; i++) {
+                tongTien = soTien * Math.pow(1 + laiSuat, i); // Công thức lãi kép
+                document.write(`<p>Tháng ${i}: Số tiền hiện tại là ${tongTien.toFixed(2)} VNĐ</p>`);
+            }
+
+        }
+        //Bài 6: In hình trái tim
+        function bai6() {
+            let n = 6; // Chiều cao của hình trái tim
+            for (let i = n / 2; i <= n; i += 2) {
+                let line = "";
+                for (let j = 1; j < n - i; j += 2) {
+                    line += " ";
+                }
+                for (let j = 1; j <= i; j++) {
+                    line += "*";
+                }
+                for (let j = 1; j <= n - i; j++) {
+                    line += " ";
+                }
+                for (let j = 1; j <= i; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+            for (let i = n; i >= 1; i--) {
+                let line = "";
+                for (let j = i; j < n; j++) {
+                    line += " ";
+                }
+                for (let j = 1; j <= (i * 2) - 1; j++) {
+                    line += "*";
+                }
+                console.log(line);
+            }
+        }
+    </script>
+</body>
+
+</html>

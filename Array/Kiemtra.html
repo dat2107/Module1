@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h2>Chọn 1 bài</h2>
+        <button onclick="bai1()">bai 1</button>
+        <button onclick="bai2()">bai 2</button>
+        <button onclick="bai3()">bai 3</button>
+        <br>
+        <button onclick="bai4()">bai 4</button>
+        <button onclick="bai5()">bai 5</button>
+        <button onclick="bai6()">bai 6</button>
+        <br>
+        <button onclick="bai7()">bai 7</button>
+        <button onclick="bai8()">bai 8</button>
+        <button onclick="bai9()">bai 9</button>
+        <br>
+        <button onclick="bai10()">bai 10</button>
+        <button onclick="bai11()">bai 11</button>
+        <button onclick="bai12()">bai 12</button>
+        <br>
+        <button onclick="bai13()">bai 13</button>
+        <button onclick="bai14()">bai 14</button>
+        <button onclick="bai15()">bai 15</button>
+        <br>
+        <button onclick="bai16()">bai 16</button>
+        <button onclick="bai17()">bai 17</button>
+        <button onclick="bai18()">bai 18</button>
+        <br>
+        <button onclick="bai19()">bai 19</button>
+        <button onclick="bai20()">bai 20</button>
+        <button onclick="bai21()">bai 21</button>
+        <br>
+        <button onclick="bai22()">bai 22</button>
+    </center>
+
+    <div id="output" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; font-family: monospace;"></div>
+
+    <script>
+        //1. Nêu các cách khai báo biến.
+        function bai1() {
+            let content = "<b>Các cách khai báo biến trong JavaScript:</b><br>";
+            content += "- var: có phạm vi function, có thể khai báo lại<br>";
+            content += "- let: có phạm vi block, không thể khai báo lại trong cùng block<br>";
+            content += "- const: phạm vi block, giá trị không thay đổi<br>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //2.Các kiểu dữ liệu đã được học (Nêu ví dụ về giá trị của chúng).
+        function bai2() {
+            let content = "<b>Các kiểu dữ liệu đã học và ví dụ:</b><br>";
+            content += "- Number: 42, 3.14<br>";
+            content += "- String: 'Hello', \"World\"<br>";
+            content += "- Boolean: true, false<br>";
+            content += "- Undefined: let x;<br>";
+            content += "- Null: let y = null;<br>";
+            content += "- Array: [1, 2, 3]<br>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //3.Làm sao quy định kiểu dữ liệu cho 1 biến?
+        function bai3() {
+            let content = "<b>Làm sao quy định kiểu dữ liệu cho 1 biến?</b><br>";
+            content += "Trong JavaScript, kiểu dữ liệu của biến được xác định tự động dựa vào giá trị gán.<br><br>";
+            content += "let a = '123'; // kiểu chuỗi<br>";
+            content += "let b = 456; // kiểu số<br>";
+            content += "let c = true; // kiểu boolean<br>";
+            content += "let g = [1, 2, 3]; // kiểu mảng <br>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //4. Có những cách nào để hiển thị chữ hello ra từ JS (kèm ví dụ)
+        function bai4() {
+            let content = "<b>Các cách hiển thị 'hello' trong JS:</b><br>";
+            content += "1. alert('hello');<br>";
+            content += "2. console.log('hello');<br>";
+            content += "3. document.write('hello');<br>";
+            content += "4. document.getElementById('id').innerHTML = 'hello';<br>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //5. Có những cách nào để nhập vào biến a với JS (kèm ví dụ)
+        function bai5() {
+            let content = "<b>Các cách nhập vào biến a:</b><br>";
+            content += "1. Dùng prompt:<br>";
+            content += "let a = prompt('Nhập a:');<br><br>";
+            content += "2. Dùng input trong HTML:<br>";
+            content += "&lt;input id='inputA' /&gt;<br>";
+            content += "let a = document.getElementById('inputA').value;<br>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //6. In ra gia diện tương ứng thẻ h1, img, a từ JS (Ví dụ thay 1 link bất kì từ Js cho thẻ a).
+        function bai6() {
+            let content = "<b>Bài 6:</b> In ra giao diện với thẻ h1, img, a từ JS.<br>";
+            content += "<h1>Tiêu đề được tạo bằng JS</h1>";
+            content += "<img src='https://i.pinimg.com/474x/6d/cd/94/6dcd94c7c4bf4800648ef7cbe0113c33.jpg' alt='Ảnh từ JS'><br>";
+            content += "<a href='https://www.youtube.com/watch?v=CJi_xDmsGMQ' target='_blank'>Liên kết từ JS</a>";
+            document.getElementById("output").innerHTML = content;
+        }
+        //7. Nhập vào đường dẫn ảnh cho biến một biến bất kì, sau đó in ra ảnh với nguồn ảnh đó.
+        function bai7() {
+            let link = prompt("Nhập vào đường dẫn ảnh:");
+            let content = "<b>Bài 7:</b> Ảnh từ đường dẫn bạn nhập:<br>";
+            content += `<img src="${link}" alt="Ảnh người dùng nhập" style="max-width:300px">`;
+            content += `<br>Đường dẫn ảnh: ${link}`;
+            //https://i.pinimg.com/474x/6d/cd/94/6dcd94c7c4bf4800648ef7cbe0113c33.jpg
+            document.getElementById("output").innerHTML = content;
+        }
+        //8. Nhập vào tuổi trong biến age, in ra 'Đủ tuổi' nếu age >= 18
+        function bai8() {
+            let age = prompt("Nhập tuổi:");
+            age = Number(age);
+            let content = "<b>Bài 8:</b><br>";
+            if (age >= 18) {
+                content += "Đủ tuổi";
+            } else {
+                content += "Chưa đủ tuổi";
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //9. Nhập vào a, b. Nếu a > b in ra tổng, nếu a < b in ra tích, nếu a = b in ra 'a=b'
+        function bai9() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let content = "<b>Bài 9:</b><br>";
+            if (a > b) {
+                content += `Tổng: ${a + b}`;
+            } else if (a < b) {
+                content += `Tích: ${a * b}`;
+            } else {
+                content += "a = b";
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //10. Nhập a ,b ,c . In ra số lớn nhất.
+        function bai10() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let c = Number(prompt("Nhập c:"));
+            let max = a;
+            if (b > max) max = b;
+            if (c > max) max = c;
+            let content = `<b>Bài 10:</b><br>Số lớn nhất là: ${max}`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //11. In ra 100 với các lượt lẻ thì in ra 'Hello', và chẵn in ra 'Hi'.
+        function bai11() {
+            let content = "<b>Bài 11:</b><br>";
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 === 0) {
+                    content += `${i}: Hi<br>`;
+                } else {
+                    content += `${i}: Hello<br>`;
+                }
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //12. Nhập vào N từ prompt. In ra N lần chữ 'Hello'.
+        function bai12() {
+            let n = Number(prompt("Nhập số N:"));
+            let content = "<b>Bài 12:</b><br>";
+            for (let i = 0; i < n; i++) {
+                content += "Hello<br>";
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //13. In ra các số từ a đến b (nâng cao a, b nhập từ input).
+        function bai13() {
+            let a = Number(prompt("Nhập số a:"));
+            let b = Number(prompt("Nhập số b:"));
+            let content = "<b>Bài 13:</b><br>";
+            for (let i = a; i <= b; i++) {
+                content += `${i} `;
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //14. In ra các số từ a đến b,số chẵn trong h2 và số lẻ trong h1.
+        function bai14() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let content = "<b>Bài 14:</b><br>";
+            for (let i = a; i <= b; i++) {
+                if (i % 2 === 0) {
+                    content += `<h2>${i}</h2>`;
+                } else {
+                    content += `<h1>${i}</h1>`;
+                }
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //15. Tính trung bình cộng các số chia 5 dư 2 từ a đến b.
+        function bai15() {
+            let a = Number(prompt("Nhập a:"));
+            let b = Number(prompt("Nhập b:"));
+            let sum = 0;
+            let count = 0;
+            for (let i = a; i <= b; i++) {
+                if (i % 5 === 2) {
+                    sum += i;
+                    count++;
+                }
+            }
+            let avg = count > 0 ? (sum / count).toFixed(2) : "Không có số phù hợp";
+            let content = `<b>Bài 15:</b><br>Trung bình cộng các số chia 5 dư 2 từ ${a} đến ${b} là: ${avg}`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //16. Cho 1 mảng bất kì. In ra các phần tử chẵn trong h2, lẻ trong h1 trong mảng.
+        function bai16() {
+            let arr = [2, 5, 7, 8, 10, 13, 15];
+            let content = "<b>Bài 16:</b><br>";
+            for (let i of arr) {
+                if (i % 2 === 0) {
+                    content += `<h2>${i}</h2>`; // chẵn
+                } else {
+                    content += `<h1>${i}</h1>`; // lẻ
+                }
+            }
+            document.getElementById("output").innerHTML = content;
+        }
+        //17. Tính trung bình cộng các số chia 5 dư 2 các phần tử trong mảng.
+        function bai17() {
+            let arr = [1, 7, 8, 10, 12, 17, 22, 27, 30, 32, 37];
+            let sum = 0;
+            let count = 0;
+            for (let i of arr) {
+                if (i % 5 === 2) {
+                    sum += i;
+                    count++;
+                }
+            }
+            let avg = count > 0 ? (sum / count).toFixed(2) : "Không có phần tử chia 5 dư 2";
+            let content = `<b>Bài 17:</b><br>Trung bình cộng = ${avg}`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //18. Cho một mảng bất kì đếm số lượng số nguyên tố có trong mảng.
+        function isPrime(n) {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        function bai18() {
+            let arr = [2, 3, 4, 5, 6, 7, 11, 12];
+            let count = 0;
+            let primes = [];
+            for (let i of arr) {
+                if (isPrime(i)) {
+                    count++;
+                    primes.push(i);
+                }
+            }
+            let content = `<b>Bài 18:</b><br>Có ${count} số nguyên tố trong mảng: [${primes.join(', ')}]`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //19. Nhập vao a, tìm vị trí của a trong mảng.
+        function bai19() {
+            let arr = [10, 20, 30, 40, 50];
+            let content = `<b>Bài 19:</b><br>Mảng hiện tại: [${arr.join(', ')}]<br>`;
+            let a = Number(prompt("Nhập số a cần tìm trong mảng:"));
+            let index = arr.indexOf(a);
+            content += index !== -1 ? `Số ${a} nằm ở vị trí ${index}` : `Không tìm thấy ${a} trong mảng`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //20. Tìm min thứ hai trong mảng.
+        function bai20() {
+            let arr = [5, 3, 9, 2, 8, 4, 6];
+            let sorted = [...arr].sort((a, b) => a - b);
+            let min2 = sorted[1];
+            let content = `<b>Bài 20:</b><br>Mảng: [${arr.join(', ')}]<br>Giá trị nhỏ thứ hai là: ${min2}`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //21. Tìm min của các phần tử chẵn của mảng.
+        function bai21() {
+            let arr = [8, 13, 4, 6, 11, 10, 7];
+            let chan = arr.filter(x => x % 2 === 0);
+            let min = chan.length > 0 ? Math.min(...chan) : "Không có số chẵn nào";
+            let content = `<b>Bài 21:</b><br>Mảng: [${arr.join(', ')}]<br>`;
+            content += `Min trong các phần tử chẵn: ${min}`;
+            document.getElementById("output").innerHTML = content;
+        }
+        //22. Tìm các vị trí của min trong mảng.
+        function bai22() {
+            let arr = [4, 7, 2, 9, 2, 6, 2, 8];
+            let min = Math.min(...arr);
+            let positions = [];
+            arr.forEach((val, index) => {
+                if (val === min) positions.push(index);
+            });
+            let content = `<b>Bài 22:</b><br>Mảng: [${arr.join(', ')}]<br>`;
+            content += `Giá trị nhỏ nhất: ${min}<br>`;
+            content += `Vị trí của min: ${positions.join(', ')}`;
+            document.getElementById("output").innerHTML = content;
+        }
+    </script>
+</body>
+
+</html>

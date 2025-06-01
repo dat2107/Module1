@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- //Hoàn thành các bài sau: -->
+    <!-- Cho một mảng [1,7,5,9,2,6,7,9,7]
+        - In ra các phần tử trong mảng.
+        - In ra các phần tử chẵn trong mảng.
+        - In ra các phần tử tại vị trí chẵn trong mảng.
+        - Cho người dùng nhập vào 1 số và in ra số lần xuất hiện của số đó trong mảng. -->
+    <script>
+        let arr = [1, 7, 5, 9, 2, 6, 7, 9, 7];
+        let arrchan = " ";
+        let arrpost = " ";
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            alert(arr);
+            break;
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]%2==0){
+                arrchan += arr[i]+", ";
+            }
+        }
+        alert("các phần tử trong mảng là số chẵn: "+arrchan);
+        for (let i = 0; i < arr.length; i++) {
+            if(i%2==0){
+                arrpost += arr[i]+", ";
+            }
+        }
+        alert("các phần tử tại ví chẵn trong mảng là: "+arrpost);
+        let n  = +prompt("Nhập 1 số xuất hiện trong mảng: ");
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]==n){
+                count++;
+            }
+        }
+        alert("số lần phẩn tử "+n+" xuất hiện trong bảng là: "+count);
+    </script>
+</body>
+
+</html>

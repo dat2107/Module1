@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const dictionary = ["apple", "banana", "cherry", "date", "strawberry", "fig", "grape", "honeydew"];
+        alert(dictionary);
+        const meaninings = ["Quả táo", "Quả chuối", "Quả anh đào", "Quả chà là", "Quả dâu tây", "Quả sung", "Quả nho", "Quả dưa lưới"];
+        let find = prompt("Nhập từ cần tra: ");
+        let result ="";
+        for (let i=0; i<dictionary.length;i++){
+            if(find === dictionary[i]){
+                result = meaninings[i];
+            }
+        }
+        alert("Từ "+find+" có nghĩa là: "+result);
+    </script>
+</body>
+</html>
